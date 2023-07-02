@@ -17,7 +17,7 @@ jobs:
       - name: Docker build image
         uses: docker/build-push-action@v4.1.1
         with:
-          context: ./website
+          # context: ./website
           file: ./Dockerfile
           push: true
           tags: |
