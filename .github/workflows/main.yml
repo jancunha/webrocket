@@ -17,8 +17,8 @@ jobs:
       - name: Docker build image
         uses: docker/build-push-action@v4.1.1
         with:
-          context: ./src
-          file: ./src/Dockerfile
+          context: ./website
+          file: ./website/Dockerfile
           push: true
           tags: |
             jancunha/webrocket:v${{ github.run_number }}
