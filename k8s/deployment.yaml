@@ -28,4 +28,21 @@ spec:
   ports:
     - port: 80
       targetPort: 80
-  type: LoadBalancer
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-rocket
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: app.192.168.1.200.nip.io
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: web
+            port: 
+              number: 80
